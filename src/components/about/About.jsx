@@ -1,4 +1,5 @@
 import React from 'react';
+import Partner from './Partner'; // Atau ganti ke Sponsor jika sudah diubah
 
 const cardStyle = {
   background: '#2c003e',
@@ -16,15 +17,30 @@ const About = () => {
   return (
     <div
       style={{
-        maxWidth: '1100px',
-        margin: '40px auto',
-        padding: '20px',
+        maxWidth: 700,
+        margin: '100px auto',
+        padding: '40px',
+        backgroundColor: '#2c003e',
+        borderRadius: 20,
+        boxShadow: '0 0 20px rgba(156, 39, 176, 0.6)',
+        color: '#fff',
         fontFamily:
           "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-        color: '#fff',
+        textAlign: 'center',
       }}
     >
-      <h1 style={{ textAlign: 'center', marginBottom: '40px' }}>About This Project</h1>
+      <h1
+        style={{
+          fontSize: '2.5rem',
+          marginBottom: '30px',
+          fontWeight: 'bold',
+          background: 'linear-gradient(90deg, #ff6ec4, #7873f5)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        📦 About This Project
+      </h1>
 
       <div
         style={{
@@ -32,13 +48,13 @@ const About = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: '20px',
+          marginBottom: '40px',
         }}
       >
         <div style={cardStyle}>
           <h2>💡 Decentralized</h2>
           <p>
-            Built on Ethereum blockchain for trustless and transparent transactions without
-            intermediaries.
+            Built on Ethereum blockchain for trustless and transparent transactions without intermediaries.
           </p>
         </div>
 
@@ -56,6 +72,10 @@ const About = () => {
           </p>
         </div>
       </div>
+
+      {/* Sponsor/Partner Section */}
+      <Partner />
+      {/* Kalau pakai Sponsor, ganti saja <Partner /> jadi <Sponsor /> */}
     </div>
   );
 };

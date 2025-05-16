@@ -1,6 +1,14 @@
 import React from 'react';
 import { AiFillBank } from "react-icons/ai";
 import { IoIosAirplane } from "react-icons/io";
+import { GiMoneyStack } from 'react-icons/gi';
+import { RiSecurePaymentFill } from 'react-icons/ri';
+import { FaBlockchain } from 'react-icons/fa';
+import { MdOutlineShoppingCart } from 'react-icons/md';
+import DescriptionSection from './DescriptionSection';
+import FeaturesSection from './FeaturesSection';
+import PromoBanner from './PromoBanner';
+import CallToAction from './CallToAction';
 
 const Home = () => {
   return (
@@ -18,13 +26,18 @@ const Home = () => {
         textAlign: 'center',
       }}
     >
+      {/* Hero Section */}
       <div style={{ marginBottom: 30 }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: 10 }}>🚀 Smart Marketplace</h1>
-        <p style={{ fontSize: '1.25rem', opacity: 0.9 }}>
-          Buy and sell securely with blockchain technology.
+        <h1 style={{ fontSize: '3rem', marginBottom: 10, fontWeight: 'bold', background: 'linear-gradient(90deg, #ff6ec4, #7873f5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          🚀 Smart Marketplace
+        </h1>
+        <p style={{ fontSize: '1.25rem', opacity: 0.9, maxWidth: 500, margin: '0 auto' }}>
+          Jual beli dengan aman dan cepat menggunakan teknologi blockchain terkini. Nikmati transaksi tanpa batas dan penuh kepercayaan.
         </p>
       </div>
 
+
+      {/* Icon Animation */}
       <div
         style={{
           display: 'flex',
@@ -35,7 +48,7 @@ const Home = () => {
         }}
       >
         {[...Array(7)].map((_, i) => (
-          <AiFillBank
+          <GiMoneyStack
             key={i}
             style={{
               fontSize: '2.5rem',
@@ -49,12 +62,19 @@ const Home = () => {
         ))}
       </div>
 
+      {/* Powered by */}
       <div style={{ marginTop: 40 }}>
-        <IoIosAirplane style={{ fontSize: '2.5rem', color: '#a78bfa' }} />
+        <MdOutlineShoppingCart style={{ fontSize: '2.5rem', color: '#a78bfa' }} />
         <p style={{ marginTop: 10, fontSize: '0.9rem', opacity: 0.8 }}>
           Powered by Web3 ✈️
         </p>
       </div>
+
+      {/* Modular Components */}
+      <CallToAction />
+      <DescriptionSection />
+      <FeaturesSection />
+      <PromoBanner />
     </div>
   );
 };

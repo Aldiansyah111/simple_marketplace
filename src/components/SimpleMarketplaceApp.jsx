@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import marketplaceService from "../context/marketplaceService";
 import { useWallet } from "../context/wallet";
+import { ImAngry2 } from "react-icons/im";
 
 import ListItemForm from "./ListItemForm";
 import BuyItemForm from "./BuyItemForm";
@@ -29,7 +30,49 @@ const SimpleMarketplaceApp = () => {
     }, [account]);
 
     if (!account) {
-        return <p>Silakan hubungkan wallet Anda melalui navigasi terlebih dahulu.</p>;
+        return (
+            <>
+                <style>{`
+        @keyframes shineGradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 200% 50%;
+          }
+        }
+      `}</style>
+
+                <div
+                    style={{
+                        background: 'linear-gradient(270deg, #ff6ec4, #7873f5, #52fff9, #ff6ec4)',
+                        backgroundSize: '600% 600%',
+                        animation: 'shineGradient 6s ease infinite',
+                        padding: '24px 30px',
+                        borderRadius: '16px',
+                        fontWeight: '700',
+                        fontSize: '20px',
+                        textAlign: 'center',
+                        color: '#fff',
+                        maxWidth: 700,
+                        margin: '80px auto',
+                        boxShadow: '0 0 20px rgba(156, 39, 176, 0.6)',
+                        fontFamily:
+                            "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+                        userSelect: 'none',
+                    }}
+                >
+                    <p style={{ marginBottom: 20 }}>
+                        Silakan hubungkan wallet Anda melalui navigasi terlebih dahulu.
+                    </p>
+                    <div style={{ fontSize: 30 }}>
+                        {[...Array(6)].map((_, i) => (
+                            <ImAngry2 key={i} style={{ margin: '0 5px' }} />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
     }
 
     return (
@@ -46,7 +89,30 @@ const SimpleMarketplaceApp = () => {
                     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
             }}
         >
-            <h2 style={{ textAlign: "center", marginBottom: 30 }}>SimpleMarketplace DApp</h2>
+            <h2
+                style={{
+                    textAlign: 'center',
+                    marginBottom: 30,
+                    background: 'linear-gradient(90deg, #ff00cc, #3333ff, #00ffcc)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    animation: 'gradientText 5s ease infinite',
+                    backgroundSize: '200% auto',
+                }}
+            >
+                SimpleMarketplace DApp
+            </h2>
+
+            <style>
+                {`
+            @keyframes gradientText {
+            0% {background-position: 0% center; }
+            100% {background-position: 200% center;}
+             }
+             `}
+            </style>
+
+
             <p
                 style={{
                     backgroundColor: "#451a66",
